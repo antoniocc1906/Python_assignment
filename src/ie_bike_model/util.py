@@ -26,7 +26,7 @@ def get_model_path(model_dir=None, model="xgboost"):
 
     if model == "xgboost":
         model_path = os.path.join(model_dir, "xgboost.pkl")
-    elif model_name == "ridge"
+    elif model == "ridge"
         model_path = os.path.join(model_dir, "ridge.pkl")
 
     return model_path
