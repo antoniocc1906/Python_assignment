@@ -1,6 +1,9 @@
+
 # Bike sharing prediction model
 
 ## Usage
+
+# ANTONIO CARVALHO
 
 To install the library:
 
