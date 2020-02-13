@@ -167,6 +167,7 @@ def train_xgboost(hour):
 
 # New function for Ridge Regression
 
+
 def train_ridge(hour):
     # Avoid modifying the original dataset at the cost of RAM
     hour = hour.copy()
@@ -187,6 +188,7 @@ def train_ridge(hour):
     ridge.fit(hour_d_train_x, hour_d_train_y)
     return ridge
 
+
 def postprocess(hour):
     # Avoid modifying the original dataset at the cost of RAM
     hour = hour.copy()
@@ -201,11 +203,11 @@ def train_and_persist(model_dir=None, hour_path=None, model="xgboost"):
     hour = dummify(hour)
     hour = postprocess(hour)
 
-    #todo:Implement other models?
+    # todo:Implement other models?
     if model == "xgboost":
         train_model = train_xgboost(hour)
     elif model == "ridge":
-       train_model = train_ridge(hour)
+        train_model = train_ridge(hour)
 
     model_path = get_model_path(model_dir, model)
 
@@ -254,7 +256,7 @@ def get_input_dict(parameters):
     return df.iloc[0].to_dict()
 
 
-def predict(parameters, model_dir=None, model= "xgboost"):
+def predict(parameters, model_dir=None, model="xgboost"):
     """Returns model prediction.
 
     """
